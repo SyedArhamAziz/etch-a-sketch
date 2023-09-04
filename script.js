@@ -21,7 +21,15 @@ function makeGrid(size) {
 }
 
 function setRandomizedColor() {
-    this.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}`;
+    if (!this.style.backgroundColor) {
+        this.style.backgroundColor = `hsl(${Math.floor(Math.random()*361)},${Math.floor(Math.random()*101)}%,90%`;
+        return;
+    }
+    let rgb = this.style.backgroundColor;
+    let r = parseInt(rgb.slice(rgb.indexOf('(') + 1));
+    let g = parseInt(rgb.slice(rgb.indexOf(',') + 1));
+    let b = parseInt(rgb.slice(rgb.lastIndexOf(',') + 1));
+    this.style.backgroundColor = `rgb(${Math.max(0, Math.floor(r - 27))}, ${Math.max(0, Math.floor(g - 27))}, ${Math.max(0, Math.floor(b - 27))})`;
 }
 
 function resetGrid() {
@@ -44,4 +52,4 @@ function getUserInput() {
     }
     return Number.parseInt(newSize);
 }
-makeGrid(16);
+makeGrid(2);
