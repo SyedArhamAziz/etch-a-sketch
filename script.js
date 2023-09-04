@@ -11,11 +11,11 @@ function makeGrid(size) {
             div.classList.add('gridEl');
             div.style.width = elWidth;
             div.style.height = elWidth;
-            div.style.backgroundColor = 'red';
+            div.addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black";})
             container.appendChild(div);
             gridEls.push(div);
         }
     }
 }
 
-makeGrid(3);
+makeGrid(16);

@@ -1,7 +1,9 @@
 #container {
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     display: flex;
     flex-wrap: wrap;
-    background-color: black;
+    background-color: white;
+    border-width: 2px;
+    border-style: dotted;
 }
