@@ -13,11 +13,15 @@ function makeGrid(size) {
             div.classList.add('gridEl');
             div.style.width = elWidth;
             div.style.height = elWidth;
-            div.addEventListener("mouseover", (event) => {event.target.style.backgroundColor = "black";})
+            div.addEventListener("mouseover", setRandomizedColor);
             container.appendChild(div);
             gridEls.push(div);
         }
     }
+}
+
+function setRandomizedColor() {
+    this.style.backgroundColor = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}`;
 }
 
 function resetGrid() {
@@ -40,4 +44,4 @@ function getUserInput() {
     }
     return Number.parseInt(newSize);
 }
-makeGrid(8);
+makeGrid(16);
