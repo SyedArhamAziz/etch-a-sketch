@@ -1,9 +1,19 @@
 #container {
-    width: 700px;
-    height: 700px;
+    width: 512px;
+    height: 512px;
     display: flex;
     flex-wrap: wrap;
     background-color: white;
     border-width: 2px;
     border-style: dotted;
+}
+
+#reset {
+    background-color: black;
+    color: whitesmoke;
+    width: 512px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: blueviolet;
+    height: 30px;
 }
